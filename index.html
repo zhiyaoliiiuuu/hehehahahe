@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+<title>thankyou!!</title>
+
+<style>
+body {
+    background: lightsteelblue;
+    color: #000000;
+    font-family:'Trebuchet MS';
+    margin: 0;
+    overflow: hidden;
+}
+
+#terminal {
+    padding: 40px;
+    font-size: 24px;
+    white-space: pre-line;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background: #111;
+    border: 3px solid #708090;
+    padding: 40px;
+    text-align: centre;
+    color: white;
+    box-shadow: 0 0 40px #000000
+}
+
+h1 {
+    color: #000000
+    font-size: 40px;
+}
+
+p {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="terminal"></div>
+
+<div id="popup">
+<h1>BUILD SUCCESSFULL</h1>
+
+<p>
+TESTING hello world<br><br>
+TESTING BODY<br><br>
+TESTING gbye world<br><br>
+</p>
+</div>
+
+<script>
+const lines = [
+    "Recalling how to visualise dataset..."
+];
+
+let i = 0;
+
+function showLine() {
+    if (i < lines.length) {
+        document.getElementById("terminal").innerHTML += lines[i] + "<br><br>";
+        i++;
+        setTimeout(showLine, 1200);
+    } else {
+        document.getElementById("popup").style.display = "block";
+    }
+
+}
+
+showLine();
+</script>
+
+</body>
+</html>
